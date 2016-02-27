@@ -82,12 +82,13 @@ footer {
     font-size: .8em;
     margin: 10px auto;
 }
-
 ul.posts { 
     margin: 20px auto 40px; 
     font-size: 1.5em;
 }
-
 ul.posts li {
     list-style: none;
+}
+i.fa {
+	font-size: 3em;
 }
