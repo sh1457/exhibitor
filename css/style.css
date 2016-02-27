@@ -91,4 +91,5 @@ ul.posts li {
 }
 i.fa {
 	font-size: 3em;
+	text-shadow: 1px 1px 1px #ccc;
 }
