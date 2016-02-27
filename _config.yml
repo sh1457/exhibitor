@@ -1,7 +1,3 @@
 name: Sujith Sudarshan
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
-collections:
-  diary:
-    output: true
-    permalink: /diary/:path/
