@@ -49,6 +49,15 @@ body {
     padding: 2px;
     width: 70%;
 }
+nav {
+    border-bottom: 1px solid #d5d5d5;
+    margin: 10px auto;
+}
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+    margin: 10px auto;
+}
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
     padding: 0px;
@@ -75,11 +84,6 @@ p {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
-    margin: 10px auto;
-}
-footer {
-    border-top: 1px solid #d5d5d5;
-    font-size: .8em;
     margin: 10px auto;
 }
 ul.posts { 
