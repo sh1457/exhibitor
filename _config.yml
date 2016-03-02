@@ -1,3 +1,3 @@
 name: Exhibitor
 markdown: kramdown
-permalink: exhibitor/prj/:year/:month/:day/:title
+permalink: prj/:year/:month/:day/:title
