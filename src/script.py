@@ -20,6 +20,8 @@ for i in content:
 	print 'Date : '+pdate
 	pdesc = i[nmemb+3]
 	print 'Description : '+pdesc
+	plink = i[nmemb+4]
+	print 'Links : '+plink
 	fname = pdate + ' ' + pname.lower() + '.md'
 	fname = "-".join(fname.split())
 	fname = '../_posts/'+fname
@@ -31,16 +33,16 @@ for i in content:
 		f.close
 	else:
 		print 'No file!'
-		post=Template("""
----
+		post=Template("""---
 layout: post
 title: "$PNAME"
 date: $PDATE
 ---
-Project Name : $PNAME
-Team Members : $PMEMB
-Description  : $PDESC
-		""").substitute(PNAME=pname, PDATE=pdate, PMEMB=str(pmemb), PDESC=pdesc)
+Project Name : $PNAME   
+Team Members : $PMEMB   
+Description  : $PDESC   
+Links        : ![imgfs]($PIMG)   
+""").substitute(PNAME=pname, PDATE=pdate, PMEMB=", ".join(pmemb), PDESC=pdesc, PIMG=plink)
 		print post
 		f=open(fname, 'w')
 		f.write(post)

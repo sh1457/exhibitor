@@ -3,11 +3,13 @@
 #include <cstring>
 #include <cstdlib>
 
-#define SIZE 255
+#define SIZE 500
 #define MAX_MEMB 4
 #define MAX_NAME 20
 #define MAX_DESC 120
 #define MAX_KEYS 20
+#define MAX_DATE 10
+#define MAX_LINK 255
 
 using namespace std;
 
@@ -15,7 +17,7 @@ class Project {
 	private:
 		//>>>Record data<<<
 		char buf[SIZE];
-		char prj_name[MAX_NAME * 2], prj_memb[4][MAX_NAME], prj_date[11], prj_desc[MAX_DESC];
+		char prj_name[MAX_NAME * 2], prj_memb[4][MAX_NAME], prj_date[MAX_DATE], prj_desc[MAX_DESC], prj_link[MAX_LINK];
 		int n_memb;
 
 		//>>>Index data<<<
@@ -86,6 +88,8 @@ void Project::pack() {
 	strcat(buf, prj_date);
 	strcat(buf, "|");
 	strcat(buf, prj_desc);
+        strcat(buf, "|");
+        strcat(buf, prj_link);
 	strcat(buf, "#");
 }
 
@@ -99,7 +103,8 @@ void Project::unpack() {
 	for (i=0; i < n_memb; i++)
 		strcpy(prj_memb[i], strtok(NULL, "|"));
 	strcpy(prj_date, strtok(NULL, "|"));
-	strcpy(prj_desc, strtok(NULL, "#"));
+	strcpy(prj_desc, strtok(NULL, "|"));
+	strcpy(prj_link, strtok(NULL, "#"));
 }
 
 void Project::add() {
@@ -126,6 +131,8 @@ void Project::add() {
 	cin.getline(prj_date, 11);
 	cout << "Enter the Project Description : ";
 	cin.getline(prj_desc, MAX_DESC);
+	cout << "Enter the Project Link : ";
+	cin.getline(prj_link, MAX_LINK);
 
 	pos = (int)fout.tellp();
 	pack();
@@ -179,6 +186,7 @@ void Project::disp() {
 			cout << "\tProject Member " << i+1 << "'s Name : " << prj_memb[i] << endl;
 		cout << "\tProject Date : " << prj_date << endl;
 		cout << "\tProject Description : " << prj_desc << endl << endl;
+		cout << "\tProject Link : " << prj_link << endl << endl;
 	}
 
 	fin.close();
