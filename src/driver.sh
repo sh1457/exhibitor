@@ -6,6 +6,8 @@ g++ Exhibitor.cpp
 
 ./a.out
 
+mkdir ../_posts
+
 python script.py
 
 git add ../*
