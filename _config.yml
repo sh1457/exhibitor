@@ -1,3 +1,4 @@
 name: Exhibitor
 markdown: kramdown
-permalink: exhibitor/prj/:year/:month/:day/:title
+permalink: /prj/:year/:month/:day/:title
+baseurl: http://sh1457.github.io/exhibitor
