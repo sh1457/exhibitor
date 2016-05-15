@@ -17,7 +17,7 @@ class Project {
 	private:
 		//>>>Record data<<<
 		char buf[SIZE];
-		char prj_name[MAX_NAME * 2], prj_memb[4][MAX_NAME], prj_date[MAX_DATE], prj_desc[MAX_DESC], prj_link[MAX_LINK];
+		char prj_name[MAX_NAME * 2 + 1], prj_memb[4][MAX_NAME + 1], prj_date[MAX_DATE + 1], prj_desc[MAX_DESC + 1], prj_link[MAX_LINK + 1];
 		int n_memb;
 
 		//>>>Index data<<<
@@ -128,7 +128,7 @@ void Project::add() {
 	}
 
 	cout << "Enter the Project Date (yyyy-mm-dd) : ";
-	cin.getline(prj_date, 11);
+	cin.getline(prj_date, MAX_DATE);
 	cout << "Enter the Project Description : ";
 	cin.getline(prj_desc, MAX_DESC);
 	cout << "Enter the Project Link : ";
